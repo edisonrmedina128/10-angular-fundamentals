@@ -1,33 +1,55 @@
-@use '../../ui/styles/variables.scss' as variables;
-@use '../../ui/styles/mixins.scss' as mixins;
+// Header
+
+// Archivo: variables.scss
+
+// Colores
+$color-background: #000;
+$color-text: #fff;
+$color-accent: #6b6b6b;
+$color-accent-darkness: #989797;
+$color-border: rgba(255, 255, 255, 0.2);
+$speakers-border-color: rgba(255, 255, 255, 0.1);
+
+// Tipografía
+$font-family: Arial, sans-serif;
+$spacing-unit: 1rem;
+
+// Fuentes Mono
+$font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$font-mono-fallback: "Roboto Mono", Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+
 
 .header {
-  @include mixins.container(space-between);
-  padding: 25px;
-  width: 1368px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  translate: -50%;
+    padding: $spacing-unit 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $color-border;
+  
+    &__date {
+      font-size: 0.9rem;
+      color: $color-accent;
+      font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    }
+  
+    &__nav {
+      display: flex;
+      gap: $spacing-unit;
+      
+      &__link {
+        text-decoration: none;
+        color: $color-text;
+        font-weight: bold;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        transition: color 0.3s;
+        font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+        &:hover {
+          color: $color-accent;
+        }
+      }  
 
-  &__actions {
-    @include mixins.container-gap(30px);
+    }
+    
   }
   
-  &__link {
-    color: #000;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  &__button {
-    color: #FFF;
-    background-color: #000;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 17px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-  }
-}

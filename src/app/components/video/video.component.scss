@@ -1,0 +1,239 @@
+// Colores
+$color-background: #000;
+$color-text: #fff;
+$color-accent: #6b6b6b;
+$color-accent-darkness: #989797;
+$color-border: rgba(255, 255, 255, 0.2);
+$speakers-border-color: rgba(255, 255, 255, 0.1);
+
+// Tipografía
+$font-family: Arial, sans-serif;
+$spacing-unit: 1rem;
+
+// Fuentes Mono
+$font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$font-mono-fallback: "Roboto Mono", Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+
+
+.main-content__highlights {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .highlights__container {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2fr 1fr; // Video y aside en columnas
+      gap: 20px;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+  
+      border: 1px solid #ffffff2b;
+  
+      // Flechas en el contenedor completo
+      .highlights__arrows {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+  
+        .highlights__arrows-corner {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          
+  
+          &:before,
+          &:after {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+          }
+  
+          // Top Left
+          &--top-left {
+            top: 0;
+            left: 0;
+  
+            &:before {
+              width: 2px;
+              height: 50%;
+              top: 0;
+              left: 0;
+            }
+            &:after {
+              width: 50%;
+              height: 2px;
+              top: 0;
+              left: 0;
+            }
+          }
+  
+          // Top Right
+          &--top-right {
+            top: 0;
+            right: 0;
+  
+            &:before {
+              width: 2px;
+              height: 50%;
+              top: 0;
+              right: 0;
+            }
+            &:after {
+              width: 50%;
+              height: 2px;
+              top: 0;
+              right: 0;
+            }
+          }
+  
+          // Bottom Left
+          &--bottom-left {
+            bottom: 0;
+            left: 0;
+  
+            &:before {
+              width: 2px;
+              height: 50%;
+              bottom: 0;
+              left: 0;
+            }
+            &:after {
+              width: 50%;
+              height: 2px;
+              bottom: 0;
+              left: 0;
+            }
+          }
+  
+          // Bottom Right
+          &--bottom-right {
+            bottom: 0;
+            right: 0;
+  
+            &:before {
+              width: 2px;
+              height: 50%;
+              bottom: 0;
+              right: 0;
+            }
+            &:after {
+              width: 50%;
+              height: 2px;
+              bottom: 0;
+              right: 0;
+            }
+          }
+        }
+      }
+    }
+  
+    .highlights__video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      
+      .yt-lite {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        padding-top: var(--aspect-ratio, 56.25%); // Mantiene relación de aspecto 16:9
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .yt-lite__playbtn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid rgba(255, 255, 255, 0.892);
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+      }
+      
+      .yt-lite__playbtn:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        border-style: solid;
+        border-width: 20px 0px 20px 26px;
+        border-color: transparent transparent transparent #ffffff;
+      }
+  
+    }
+  
+    .highlights__aside {
+      padding: 20px;
+      color: #fff;
+      border: 1px solid #ffffff2b;
+      .highlights__title {
+        font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: $color-accent-darkness;
+        text-transform: uppercase;
+        border: 1px solid #ccc;
+      }
+  
+      .highlights__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .highlights__item {
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+  
+          .highlights__icon {
+            font-size: 1.2rem;
+          }
+  
+          .highlights__text {
+            font-size: 1rem;
+          }
+        }
+      }
+  
+      .highlights__cta {
+        margin-top: 20px;
+  
+        .highlights__cta-text {
+          margin-bottom: 10px;
+          font-size: 0.9rem;
+          color: #ccc;
+        }
+  
+        .highlights__cta-button {
+          padding: 10px 20px;
+          border: 1px solid #fff;
+          background: transparent;
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.3s;
+  
+          &:hover {
+            background: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+  
+  }
+  
+  
+  

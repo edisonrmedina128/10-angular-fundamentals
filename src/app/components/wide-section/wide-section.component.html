@@ -1,0 +1,21 @@
+<section class="corner-arrows-container">
+  
+    <div class="corner-arrow corner-arrow--top-left"></div>
+    <div class="corner-arrow corner-arrow--top-right"></div>
+    <div class="corner-arrow corner-arrow--bottom-left"></div>
+    <div class="corner-arrow corner-arrow--bottom-right"></div>
+    
+    <div class="content">
+      <div class="content__logo">
+        <img src="footer.png" alt="Vercel Logo" class="content__logo-image">
+      </div>
+      <div class="content__links">
+        @for (link of navLinksWideSession; track link.text) {
+          <a 
+             class="content__links">
+            {{ link.text }}
+          </a>
+        }
+      </div>
+    </div>
+  </section>
