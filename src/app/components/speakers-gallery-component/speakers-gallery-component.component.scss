@@ -1,0 +1,24 @@
+.speakers__gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  
+    &__card {
+
+      &__image {
+        max-width: 90%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 8px;
+        display: block;
+      }
+  
+      &__name {
+        margin-top: 10px;
+        font-size: 1rem;
+        text-transform: uppercase;
+      }
+      
+    }
+
+}

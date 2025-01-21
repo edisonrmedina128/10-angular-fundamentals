@@ -1,55 +1,33 @@
-// Header
+// Archivo: header.component.scss
 
-// Archivo: variables.scss
-
-// Colores
-$color-background: #000;
-$color-text: #fff;
-$color-accent: #6b6b6b;
-$color-accent-darkness: #989797;
-$color-border: rgba(255, 255, 255, 0.2);
-$speakers-border-color: rgba(255, 255, 255, 0.1);
-
-// Tipografía
-$font-family: Arial, sans-serif;
-$spacing-unit: 1rem;
-
-// Fuentes Mono
-$font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-$font-mono-fallback: "Roboto Mono", Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-
+@import '../ui/syless/mixins.scss';
+@import '../ui/syless/variables.scss';
 
 .header {
-    padding: $spacing-unit 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid $color-border;
-  
-    &__date {
-      font-size: 0.9rem;
-      color: $color-accent;
-      font-family: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    }
-  
-    &__nav {
-      display: flex;
-      gap: $spacing-unit;
-      
-      &__link {
-        text-decoration: none;
-        color: $color-text;
-        font-weight: bold;
-        font-size: 0.95rem;
-        text-transform: uppercase;
-        transition: color 0.3s;
-        font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-        &:hover {
-          color: $color-accent;
-        }
-      }  
+  padding: $spacing-unit 2rem;
+  @include flex-center(space-between, center); // Usando el mixin para flexbox
+  border-bottom: 1px solid $color-border;
 
-    }
-    
+  &__date {
+    @include font-mono(0.9rem); // Usando el mixin para fuente mono
+    color: $color-accent;
   }
-  
+
+  &__nav {
+    @include flex-center(flex-start, center); // Usando el mixin para flexbox
+    gap: $spacing-unit;
+
+    &__link {
+      text-decoration: none;
+      color: $color-text;
+      font-weight: bold;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      @include transition(color); // Usando el mixin para transiciones
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}

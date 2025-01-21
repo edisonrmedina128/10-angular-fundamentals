@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
   
-  @Input() navLinks!: { text: string; url: string }[]; // Links del menú
+  @Input() navLinks!: { text: string; url: string }[];
 
 }

@@ -1,39 +1,33 @@
+@import '../ui/syless/mixins.scss';
+@import '../ui/syless/variables.scss';
+
 .footer {
-    background: #000;
-    color: #EDEDED;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    &__container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-  
-    &__text {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-  
-    &__icons {
-      display: flex;
-      gap: 15px;
-  
-      svg {
-        width: 24px;
-        height: 24px;
-        cursor: pointer;
-        transition: all 0.3s;
-  
-        &:hover {
-          fill: #fff;
-          transform: scale(1.1);
-        }
-      }
-    }
+  background: $color-footer-bg; 
+  color: $color-footer-text;    
+  font-size: 0.9rem;
+  border-top: 1px solid $color-border;
+  @include padding($spacing-small, 20px);
+
+  &__container {
+    @include flex-center(space-between, center);
+    width: 100%;
   }
-  
+
+  &__text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: $spacing-small;
+
+    &__svg { 
+      width: $icon-size;
+      height: $icon-size;
+      @include icon-hover($color-icon-hover);
+    }
+    
+  }
+
+}

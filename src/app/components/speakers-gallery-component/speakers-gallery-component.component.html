@@ -1,0 +1,15 @@
+<div class="speakers__gallery">
+    @for (speaker of speakers; track $index) {
+      <figure class="speakers__gallery__card">
+        <img 
+          [src]="speaker.image" 
+          [alt]="speaker.name"
+          class="speakers__gallery__card__image" 
+        />
+        <figcaption class="speakers__gallery__card__name">
+          {{ speaker.name }}
+        </figcaption>
+      </figure>
+    }
+  </div>
+  

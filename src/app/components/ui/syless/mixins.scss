@@ -1,0 +1,53 @@
+// Archivo: mixins.scss
+
+// Mixin para flexbox
+@mixin flex-center($justify: center, $align: center, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+// Mixin para transiciones
+@mixin transition($property: all, $duration: 0.3s, $timing-function: ease) {
+    transition: $property $duration $timing-function;
+}
+
+// Mixin para fuentes mono
+@mixin font-mono($size: 1rem, $weight: normal) {
+    font-family: $font-mono;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+// Mixin para íconos interactivos
+@mixin icon-hover($hover-color: #fff, $scale: 1.1, $duration: 0.3s) {
+    cursor: pointer;
+    transition: all $duration ease;
+
+    &:hover {
+        fill: $hover-color;
+        transform: scale($scale);
+    }
+}
+
+// Mixin para paddings personalizados
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    padding: $top $right $bottom $left;
+}
+
+// Mixin para flexbox básico con configuración personalizada
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+// Mixin para definir un contenedor centrado con ancho máximo
+@mixin centered-container($max-width: 1200px, $padding: 0) {
+    width: 100%;
+    max-width: $max-width;
+    padding: $padding;
+}

@@ -1,0 +1,24 @@
+/* Styles for Speakers Header Component */
+.speakers {
+    &__header {
+      text-align: left;
+      margin-bottom: 40px;
+  
+      &__description {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+  
+      &__title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+  
+        &__count {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  

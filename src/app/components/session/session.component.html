@@ -1,36 +1,37 @@
  <!-- Session Content -->
- <section class="main-content__session">
+ <section class="main__content__session">
 
-    <!-- Left Column -->
-    <div class="main-content__session-details">
-      <h2 class="main-content__session-heading">
-        Sessions<span class="main-content__session-heading-number">(1)</span>
+    <div class="main__content__session__details">
+      <h2 class="main__content__session__heading">
+        Sessions<span class="main__content__session__heading__number">(1)</span>
       </h2>
-      <div class="main-content__session-keynote">
-        <h3 class="main-content__session-keynote-title">Opening Keynote</h3>
-        <ul class="main-content__session-list" aria-label="Keynote Topics">
-          <li class="main-content__session-list-item">Introduction</li>
-          <li class="main-content__session-list-item">v0 & AI SDK</li>
-          <li class="main-content__session-list-item">Previews & Feature Flags</li>
-          <li class="main-content__session-list-item">Compute & Next.js 15</li>
-          <li class="main-content__session-list-item">Security</li>
+      <div class="main__content__session__keynote">
+        <h3 class="main__content__session__keynote__title">Opening Keynote</h3>
+        <ul class="main__content__session__list" aria-label="Keynote Topics">
+          
+          @for (topic of topics; track $index) {
+            <li class="main__content__session__list__item">
+              {{ topic }}
+            </li>
+          }
+
         </ul>
-        <p class="main-content__session-description">
+        
+        <p class="main__content__session__description">
           The web is more powerful than ever. You need tools that will help you get ahead, not get in the way.
           We're introducing updates to our security offering, AI tooling, feature flag management support, and
           more.
         </p>
-        <button class="main-content__session-button" aria-label="Watch Opening Keynote">
+        <button class="main__content__session__button" aria-label="Watch Opening Keynote">
           Watch more →
         </button>
       </div>
     </div>
 
-    <!-- Right Column -->
-    <div class="main-content__session-image" aria-hidden="true">
-      <div class="main-content__session-image-wrapper">
+    <div class="main__content__session__image" aria-hidden="true">
+      <div class="main__content__session__image__wrapper">
         <img src="1.png" alt="Vercel Ship 24 Opening Keynote Speakers"
-          class="main-content__session-image-picture" />
+          class="main__content__session__image__picture" />
       </div>
     </div>
 

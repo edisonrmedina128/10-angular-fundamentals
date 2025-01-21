@@ -1,13 +1,17 @@
-<main class="main-content" role="main">
+<main class="main__content" role="main">
 
-    <div class="main-content__wrapper">
+    <!--corregido-->
+    <div class="main__content__wrapper"> 
 
-        <section class="main-content__section" aria-labelledby="main-title" tabindex="0">
+        <!--corregido-->
+        <section class="main__content__section" aria-labelledby="main-title" tabindex="0">
+            
             <app-video></app-video>
             <app-session></app-session>
             <app-sessions [sessions]="sessionsActive" (videoClick)="handleVideoClick($event)"></app-sessions>
             <app-speakers></app-speakers>
             <app-wide-section [navLinksWideSession]="navLinksWideSession"></app-wide-section>
+        
         </section>
       
     </div>
